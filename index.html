@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Li Yan</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <style>
+:root {
+  --primary: #494e52;
+  --link: #1a0dab;
+  --bg: #fff;
+  --sidebar-bg: #f2f3f3;
+  --border: #e0e0e0;
+  --heading: #222;
+  --text: #333;
+  --muted: #6c757d;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: var(--text); line-height: 1.7; background: var(--bg); }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrapper { display: flex; max-width: 1200px; margin: 0 auto; min-height: 100vh; }
+
+/* Sidebar */
+.sidebar { width: 260px; min-width: 260px; background: var(--sidebar-bg); padding: 40px 24px; border-right: 1px solid var(--border); position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+.profile-photo { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; object-position: center 65%; display: block; margin: 0 auto 16px; border: 3px solid var(--border); }
+.sidebar h2 { text-align: center; font-size: 1.3em; margin-bottom: 4px; color: var(--heading); }
+.sidebar .bio { text-align: center; font-size: 0.88em; color: var(--muted); margin-bottom: 16px; }
+.sidebar .info-list { list-style: none; font-size: 0.88em; }
+.sidebar .info-list li { padding: 5px 0; display: flex; align-items: center; gap: 8px; }
+.sidebar .info-list li svg { flex-shrink: 0; width: 16px; height: 16px; fill: var(--muted); }
+
+/* Main content */
+.main-content { flex: 1; padding: 40px 48px; max-width: 900px; }
+.section { margin-bottom: 48px; }
+.section h1 { font-size: 1.8em; margin-bottom: 16px; color: var(--heading); border-bottom: 2px solid var(--border); padding-bottom: 8px; }
+.section h2 { font-size: 1.3em; margin: 28px 0 12px; color: var(--heading); }
+.section p, .section li { font-size: 0.95em; }
+.section ul { padding-left: 20px; margin-bottom: 12px; }
+.section li { margin-bottom: 6px; }
+
+/* Navigation */
+nav { background: var(--heading); padding: 0; position: sticky; top: 0; z-index: 100; }
+nav ul { list-style: none; display: flex; max-width: 1200px; margin: 0 auto; }
+nav li a { display: block; padding: 12px 24px; color: #fff; font-size: 0.95em; font-weight: 500; }
+nav li a:hover { background: rgba(255,255,255,0.15); text-decoration: none; }
+
+/* Publication card */
+.pub-card { border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 18px; background: #fafafa; display: flex; gap: 20px; }
+.pub-card .pub-figure { flex-shrink: 0; width: 220px; }
+.pub-card .pub-figure img { width: 100%; border-radius: 4px; border: 1px solid var(--border); }
+.pub-card .pub-figure .links { display: flex; gap: 8px; justify-content: center; margin-top: 8px; flex-wrap: wrap; }
+.pub-card .pub-info { flex: 1; }
+.pub-card h3 { margin: 0 0 6px; font-size: 1.05em; color: var(--heading); }
+.pub-card .venue { font-size: 0.88em; color: var(--muted); margin-bottom: 6px; font-style: italic; }
+.pub-card .authors { font-size: 0.9em; margin-bottom: 8px; }
+.pub-card .authors strong { font-weight: 700; }
+.pub-card .abstract { font-size: 0.88em; color: #555; margin-bottom: 10px; }
+.pub-card .links { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.pub-card .links a { display: inline-flex; align-items: center; gap: 4px; font-size: 0.88em; padding: 4px 10px; border: 1px solid var(--border); border-radius: 4px; background: #fff; color: var(--text); }
+.pub-card .links a:hover { background: #f0f0f0; text-decoration: none; }
+.gh-stars { font-size: 0.88em; color: var(--muted); }
+.gh-star-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 0.88em; color: var(--text); }
+.gh-star-badge svg { width: 16px; height: 16px; fill: #333; }
+
+/* News */
+.news-item { display: flex; gap: 12px; margin-bottom: 8px; font-size: 0.93em; }
+.news-item .date { font-weight: 700; color: var(--muted); min-width: 80px; white-space: nowrap; flex-shrink: 0; }
+.news-item .news-text { flex: 1; }
+
+/* Experience with logo */
+.exp-item { margin-bottom: 18px; display: flex; gap: 16px; align-items: flex-start; }
+.exp-item .exp-logo { flex-shrink: 0; width: 48px; height: 48px; object-fit: contain; margin-top: 2px; }
+.exp-item .exp-body { flex: 1; }
+.exp-item .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+.exp-item .exp-header h3 { margin: 0; font-size: 1em; }
+.exp-item .exp-header .dates { font-size: 0.88em; color: var(--muted); }
+.exp-item .exp-desc { font-size: 0.9em; margin-top: 4px; }
+
+/* Education */
+.edu-item { margin-bottom: 14px; display: flex; gap: 12px; align-items: flex-start; }
+.edu-item .edu-logo { flex-shrink: 0; width: 18px; height: 18px; object-fit: contain; margin-top: 2px; }
+.edu-item .edu-body { flex: 1; }
+.edu-item .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+.edu-item .exp-header h3 { margin: 0; font-size: 1em; }
+.edu-item .exp-header .dates { font-size: 0.88em; color: var(--muted); }
+.edu-item .exp-desc { font-size: 0.9em; margin-top: 4px; }
+
+/* Awards */
+.award-item { display: flex; justify-content: space-between; padding: 4px 0; font-size: 0.93em; }
+.award-item .year { color: var(--muted); }
+
+/* Footer */
+footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted); border-top: 1px solid var(--border); }
+
+@media (max-width: 768px) {
+  .wrapper { flex-direction: column; }
+  .sidebar { width: 100%; min-width: 100%; position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px; }
+  .main-content { padding: 24px; }
+  nav ul { flex-wrap: wrap; }
+  .pub-card { flex-direction: column; }
+  .pub-card .pub-figure { width: 100%; }
+  .exp-item { flex-direction: column; }
+  .exp-item .exp-logo { width: 36px; height: 36px; }
+}
+</style>
+</head>
+<body>
+  <nav><ul><li><a href="#about">About</a></li><li><a href="#publications">Selected Works</a></li><li><a href="#experience">Experience</a></li><li><a href="#awards">Awards</a></li></ul></nav>
+  <div class="wrapper">
+    <aside class="sidebar">
+  <img class="profile-photo" src="images/avatar.jpg" alt="Profile photo">
+  <h2>Li Yan</h2>
+  <p class='bio'>MS, Shanghai Jiao Tong University</p>
+  
+  <ul class="info-list">
+    <li><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Shanghai, China</li>
+<li><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:daodao123@sjtu.edu.cn">daodao123@sjtu.edu.cn</a></li>
+<li><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><a href="https://github.com/lizzy8587">lizzy8587</a></li>
+<li><svg viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg><a href="https://scholar.google.com/citations?user=QUc0FPkAAAAJ&hl=en">Google Scholar</a></li>
+  </ul>
+</aside>
+    <main class="main-content">
+      <div class="section" id="about">
+<h1>About</h1>
+<p>I am a Master's student at <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University</a>, supervised by Prof. <a href="https://yangxue.site/">Xue Yang</a> and Prof. <a href="https://thinklab.sjtu.edu.cn/">Junchi Yan</a>. I also visited <a href="https://www.ntu.edu.sg/">Nanyang Technological University</a> S-Lab, supervised by Prof. <a href="https://liuziwei7.github.io/">Ziwei Liu</a>. Before that, I received my Bachelor's degree from SJTU in 2023. Currently, I am interning at <em>Microsoft Research Asia</em>, mentored by <a href="https://scholar.google.com/citations?user=u6QK7AkAAAAJ">Yifan Yang</a>, <a href="https://scholar.google.com/citations?hl=zh-CN&user=01iBf38AAAAJ">Chong Luo</a>, and <a href="https://scholar.google.com/citations?hl=zh-CN&user=cDcWXuIAAAAJ">Lijuan Wang</a>.</p>
+
+<p>My research focuses on <strong>Unified Understanding and Generation</strong>, <strong>Image/Video Tokenization and Generation</strong>, <strong>Reinforcement Learning</strong>, and <strong>Multi-modal Perception</strong>.</p>
+
+<h2>News</h2>
+<div class="news-item"><span class="date">Jun 2026</span><span class="news-text">I graduated from SJTU! Named <strong>Outstanding Graduate of Shanghai</strong></span></div>
+<div class="news-item"><span class="date">Jun 2026</span><span class="news-text">We released <a href="https://github.com/microsoft/SkillOpt">SkillOpt</a> <span class="gh-star-badge"><svg viewBox="0 0 16 16" style="width:14px;height:14px;fill:#333;vertical-align:middle;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="microsoft/SkillOpt"></span></span> 🔥</span></div>
+<div class="news-item"><span class="date">Apr 2026</span><span class="news-text">We released <a href="https://github.com/OpenSenseNova/SenseNova-U1">SenseNova-U1</a> <span class="gh-star-badge"><svg viewBox="0 0 16 16" style="width:14px;height:14px;fill:#333;vertical-align:middle;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="OpenSenseNova/SenseNova-U1"></span></span> 🔥</span></div>
+<div class="news-item"><span class="date">Feb 2026</span><span class="news-text">Our <em>AdapTok</em> paper got accepted at <strong>CVPR 2026</strong>! 🎉</span></div>
+<div class="news-item"><span class="date">Feb 2026</span><span class="news-text">I received the <em style="color:red">Stars of Tomorrow Award</em> from Microsoft ⭐</span></div>
+<div class="news-item"><span class="date">Jan 2026</span><span class="news-text">Our <em>CastDet</em> journal extension got accepted at <strong>IJCV 2026</strong>.</span></div>
+<div class="news-item"><span class="date">Jan 2026</span><span class="news-text">I am visiting <strong>NTU S-Lab</strong> with Prof. Ziwei Liu, working on native multimodal understanding and generation. 🇸🇬</span></div>
+<div class="news-item"><span class="date">Aug 2025</span><span class="news-text">I joined <strong>MSRA</strong> as a research intern.</span></div>
+<div class="news-item"><span class="date">Feb 2025</span><span class="news-text">I started interning at <strong>NVIDIA</strong>, working on 3D neural reconstruction.</span></div>
+<div class="news-item"><span class="date">Oct 2024</span><span class="news-text">I received the <strong>National Scholarship</strong>.</span></div>
+<div class="news-item"><span class="date">Jul 2024</span><span class="news-text">Our <em>CastDet</em> paper got accepted at <strong>ECCV 2024</strong> 🎉</span></div>
+<div class="news-item"><span class="date">Mar 2024</span><span class="news-text">I joined <strong>BOSCH</strong> as a CV intern.</span></div>
+
+<h2>Education</h2>
+<div class="edu-item">
+  <img class="edu-logo" src="images/logos/ntu_logo.png" alt="NTU">
+  <div class="edu-body">
+  <div class="exp-header"><h3>Visiting Student, Nanyang Technological University (S-Lab)</h3><span class="dates">Jan 2026 – May 2026</span></div>
+  <p class="exp-desc">Supervisor: Ziwei Liu | Topic: Unified vision-language understanding and generation</p>
+  </div>
+</div>
+<div class="edu-item">
+  <img class="edu-logo" src="images/logos/sjtu_logo.png" alt="SJTU">
+  <div class="edu-body">
+  <div class="exp-header"><h3>M.S. in Information Engineering, Shanghai Jiao Tong University</h3><span class="dates">Sept 2023 – June 2026</span></div>
+  <p class="exp-desc">GPA: 3.71/4.0 | Supervisor: Xue Yang, Junchi Yan</p>
+  </div>
+</div>
+<div class="edu-item">
+  <img class="edu-logo" src="images/logos/sjtu_logo.png" alt="SJTU">
+  <div class="edu-body">
+  <div class="exp-header"><h3>B.S. in Information Engineering (Elite Program), Shanghai Jiao Tong University</h3><span class="dates">Sept 2019 – June 2023</span></div>
+  <p class="exp-desc">GPA: 3.74/4.3 (Obtained postgraduate recommendation)</p>
+  </div>
+</div>
+</div>
+<div class="section" id="publications">
+<h1>Selected Works</h1>
+<div class="pub-card">
+  <div class="pub-figure">
+  <img src="images/papers/evotok.png" alt="EvoTok: A Unified Image Tokenizer via Residual Latent Evolution for Visual Understanding and Generation teaser">
+  <div class="links"><a href="https://arxiv.org/abs/2603.12108">📄 Paper</a>
+<a href="https://github.com/VisionXLab/EvoTok" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="VisionXLab/EvoTok"></span></a></div>
+</div>
+  <div class="pub-info">
+    <h3>EvoTok: A Unified Image Tokenizer via Residual Latent Evolution for Visual Understanding and Generation</h3>
+    <p class="venue">Preprint</p>
+    <p class="authors"><strong>Yan Li</strong><sup>†</sup>, Ning Liao<sup>†</sup>, Xiangyu Zhao, Shaofeng Zhang, Xiaoxing Wang, Yifan Yang, Junchi Yan, Xue Yang</p>
+    <p class="abstract">A unified image tokenizer that represents images as a residual latent evolution trajectory within a shared latent space, effective for both semantic alignment and pixel reconstruction.</p>
+  </div>
+</div>
+<div class="pub-card">
+  <div class="pub-figure">
+  <img src="images/papers/bizgeneval.png" alt="BizGenEval: A Systematic Benchmark for Commercial Visual Content Generation teaser">
+  <div class="links"><a href="https://arxiv.org/abs/2603.25732">📄 Paper</a>
+<a href="https://github.com/microsoft/BizGenEval" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="microsoft/BizGenEval"></span></a>
+<a href="https://aka.ms/BizGenEval">🌐 Project</a></div>
+</div>
+  <div class="pub-info">
+    <h3>BizGenEval: A Systematic Benchmark for Commercial Visual Content Generation</h3>
+    <p class="venue">Preprint</p>
+    <p class="authors"><strong>Yan Li</strong><sup>†</sup>, Zezi Zeng<sup>†</sup>, Ziwei Zhou<sup>†</sup>, Xin Gao<sup>†</sup>, Muzhao Tian<sup>†</sup>, Yifan Yang, Mingxi Cheng, Qi Dai, Yuqing Yang, Lili Qiu, Zhendong Wang, Zhengyuan Yang, Xue Yang, Lijuan Wang, Ji Li</p>
+    <p class="abstract">The first comprehensive benchmark for commercial visual content generation, covering five domains, four capability dimensions, 20 evaluation tasks, and 8,000 human-verified checklist questions.</p>
+  </div>
+</div>
+<div class="pub-card">
+  <div class="pub-figure">
+  <img src="images/papers/mm-webagent.png" alt="MM-WebAgent: A Hierarchical Multimodal Web Agent for Webpage Generation teaser">
+  <div class="links"><a href="https://arxiv.org/abs/2604.15309">📄 Paper</a>
+<a href="https://github.com/microsoft/MM-WebAgent" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="microsoft/MM-WebAgent"></span></a>
+<a href="https://aka.ms/mm-webagent">🌐 Project</a></div>
+</div>
+  <div class="pub-info">
+    <h3>MM-WebAgent: A Hierarchical Multimodal Web Agent for Webpage Generation</h3>
+    <p class="venue">Preprint</p>
+    <p class="authors"><strong>Yan Li</strong><sup>†</sup>, Zezi Zeng<sup>†</sup>, Yifan Yang, Yuqing Yang, Ning Liao, Weiwei Guo, Xue Yang, Lijuan Wang, Chong Luo</p>
+    <p class="abstract">A multimodal web agent enabling hierarchical agentic planning over native multimodal asset generation with hierarchical self-reflection for iterative webpage refinement.</p>
+  </div>
+</div>
+<div class="pub-card">
+  <div class="pub-figure">
+  <img src="images/papers/sensenova-u1.png" alt="SenseNova-U1: Unifying Multimodal Understanding and Generation with NEO-unify Architecture teaser">
+  <div class="links"><a href="https://arxiv.org/abs/2605.12500v1">📄 Paper</a>
+<a href="https://github.com/OpenSenseNova/SenseNova-U1" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="OpenSenseNova/SenseNova-U1"></span></a>
+<a href="https://huggingface.co/collections/sensenova/sensenova-u1">🌐 Project</a></div>
+</div>
+  <div class="pub-info">
+    <h3>SenseNova-U1: Unifying Multimodal Understanding and Generation with NEO-unify Architecture</h3>
+    <p class="venue">Technical Report</p>
+    <p class="authors">Haiwen Diao, Penghao Wu, Hanming Deng, Jiahao Wang, Shihao Bai, Silei Wu, Weichen Fan, Wenjie Ye, ..., <strong>Yan Li</strong>, et al. <span style="color:#5B9BD5"><em>"Core Contributor"</em></span></p>
+    <p class="abstract">A native unified multimodal paradigm coupling autoregressive language modeling with pixel-space flow matching.</p>
+  </div>
+</div>
+<div class="pub-card">
+  <div class="pub-figure">
+  <img src="images/papers/adaptok.png" alt="AdapTok: Learning Adaptive and Temporally Causal Video Tokenization in a 1D Latent Space teaser">
+  <div class="links"><a href="https://arxiv.org/abs/2505.17011">📄 Paper</a>
+<a href="https://github.com/VisionXLab/AdapTok" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="VisionXLab/AdapTok"></span></a></div>
+</div>
+  <div class="pub-info">
+    <h3>AdapTok: Learning Adaptive and Temporally Causal Video Tokenization in a 1D Latent Space</h3>
+    <p class="venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2026</p>
+    <p class="authors"><strong>Yan Li</strong><sup>†</sup>, Changyao Tian<sup>†</sup>, Renqiu Xia, Ning Liao, Weiwei Guo, Junchi Yan, Hongsheng Li, Jifeng Dai, Hao Li, Xue Yang</p>
+    <p class="abstract">An adaptive video tokenization framework featuring temporal causality, 1D latent token space, and flexible adaptive token allocation. Achieves Pareto optimality between token quantity and reconstruction quality.</p>
+  </div>
+</div>
+<div class="pub-card">
+  <div class="pub-figure">
+  <img src="images/papers/castdet-ijcv.png" alt="Exploiting Unlabeled Data with Multiple Expert Teachers for Open Vocabulary Aerial Object Detection and Its Orientation Adaptation teaser">
+  <div class="links"><a href="https://arxiv.org/abs/2411.02057">📄 Paper</a>
+<a href="https://github.com/lizzy8587/CastDet" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="lizzy8587/CastDet"></span></a></div>
+</div>
+  <div class="pub-info">
+    <h3>Exploiting Unlabeled Data with Multiple Expert Teachers for Open Vocabulary Aerial Object Detection and Its Orientation Adaptation</h3>
+    <p class="venue">International Journal of Computer Vision (IJCV) 2026</p>
+    <p class="authors"><strong>Yan Li</strong>, Weiwei Guo, Xue Yang, Ning Liao, Shaofeng Zhang, Yi Yu, Wenxian Yu, Junchi Yan</p>
+    <p class="abstract">Extended CastDet for open-vocabulary oriented detection in aerial scenes. Achieves 36.0% mAP on DIOR-R and 24.3% mAP on DOTA-R, surpassing SOTAs significantly.</p>
+  </div>
+</div>
+<div class="pub-card">
+  <div class="pub-figure">
+  <img src="images/papers/castdet-eccv.png" alt="Toward Open Vocabulary Aerial Object Detection with CLIP-Activated Student-Teacher Learning teaser">
+  <div class="links"><a href="https://arxiv.org/abs/2311.11646">📄 Paper</a>
+<a href="https://github.com/lizzy8587/CastDet" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="lizzy8587/CastDet"></span></a></div>
+</div>
+  <div class="pub-info">
+    <h3>Toward Open Vocabulary Aerial Object Detection with CLIP-Activated Student-Teacher Learning</h3>
+    <p class="venue">European Conference on Computer Vision (ECCV) 2024</p>
+    <p class="authors"><strong>Yan Li</strong>, Weiwei Guo, Xue Yang, Ning Liao, Dunyun He, Jiaqi Zhou, Wenxian Yu</p>
+    <p class="abstract">Pioneers open vocabulary aerial object detection (OVAD) with CastDet, achieving 46.5% mAP on VisDroneZSD, outperforming SOTA by 21.0%.</p>
+  </div>
+</div>
+</div>
+<div class="section" id="experience">
+<h1>Experience</h1>
+<div class="exp-item">
+  <img class="exp-logo" src="images/logos/microsoft_logo.png" alt="">
+  <div class="exp-body">
+    <div class="exp-header"><h3>Research Intern, Microsoft Research Asia <em style="color:#5B9BD5;font-weight:normal">"Stars of Tomorrow Award"</em></h3><span class="dates">Aug 2025 – Present</span></div>
+    <p class="exp-desc">RL for autoregressive complex layout image generation; multimodal web generation agent (MM-WebAgent); commercial visual benchmark (BizGenEval); skill/harness evolution (SkillOpt); agentic slides generation</p>
+  </div>
+</div>
+<div class="exp-item">
+  <img class="exp-logo" src="images/logos/ntu_logo.png" alt="">
+  <div class="exp-body">
+    <div class="exp-header"><h3>Visiting Student, Nanyang Technological University, S-Lab</h3><span class="dates">Jan 2026 – May 2026</span></div>
+    <p class="exp-desc">Core contributor to SenseNova-U1 native unified multimodal understanding and generation model</p>
+  </div>
+</div>
+<div class="exp-item">
+  <img class="exp-logo" src="images/logos/nv_logo.png" alt="">
+  <div class="exp-body">
+    <div class="exp-header"><h3>Deep Learning Engineering Intern, NVIDIA</h3><span class="dates">Feb 2025 – June 2025</span></div>
+    <p class="exp-desc">Neural Reconstruction Engine (NRE) for DRIVE Sim; novel view synthesis</p>
+  </div>
+</div>
+<div class="exp-item">
+  <img class="exp-logo" src="images/logos/ailab_logo.png" alt="">
+  <div class="exp-body">
+    <div class="exp-header"><h3>Academic Cooperation, Shanghai AI Laboratory (OpenGVLab)</h3><span class="dates">Feb 2024 – May 2025</span></div>
+    <p class="exp-desc">Open-vocabulary object detection (ECCV'24, IJCV'26); adaptive video tokenizer (CVPR'26)</p>
+  </div>
+</div>
+<div class="exp-item">
+  <img class="exp-logo" src="images/logos/bosch_logo.png" alt="">
+  <div class="exp-body">
+    <div class="exp-header"><h3>Computer Vision Algorithm Intern, BOSCH</h3><span class="dates">Mar 2024 – July 2024</span></div>
+    <p class="exp-desc">Open-vocabulary object detection; scene graph generation; semi-automatic annotation frameworks</p>
+  </div>
+</div>
+</div>
+<div class="section" id="awards">
+<h1>Awards</h1>
+<div class="award-item"><span>Stars of Tomorrow Award, Microsoft</span><span class="year">2026</span></div>
+<div class="award-item"><span>Outstanding Graduate of Shanghai</span><span class="year">2026</span></div>
+<div class="award-item"><span>National Scholarship</span><span class="year">2024</span></div>
+<div class="award-item"><span>Shanghai Municipal Scholarship</span><span class="year">2022</span></div>
+<div class="award-item"><span>SJTU Excellence Scholarship</span><span class="year">2021–2024</span></div>
+<div class="award-item"><span>Finalist, American Mathematical Contest in Modeling (MCM)</span><span class="year">2022</span></div>
+</div>
+    </main>
+  </div>
+  <footer>
+    &copy; Li Yan &middot; Powered by <a href="https://github.com/academicpages/academicpages.github.io">Academic Pages</a>
+  </footer>
+  <script>
+  document.querySelectorAll('.gh-stars').forEach(el => {
+    const repo = el.dataset.repo;
+    if (!repo) return;
+    fetch(`https://api.github.com/repos/${repo}`)
+      .then(r => r.json())
+      .then(d => {
+        if (d.stargazers_count !== undefined) {
+          const c = d.stargazers_count;
+          el.textContent = c >= 1000 ? (c / 1000).toFixed(1) + 'k' : c;
+        }
+      })
+      .catch(() => {});
+  });
+  </script>
+</body>
+</html>
