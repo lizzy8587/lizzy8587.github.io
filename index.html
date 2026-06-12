@@ -94,6 +94,11 @@ nav li a:hover { background: rgba(255,255,255,0.15); text-decoration: none; }
 /* Footer */
 footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted); border-top: 1px solid var(--border); }
 
+/* Copy tooltip */
+.copy-link { position: relative; cursor: pointer; text-decoration: underline; }
+.copy-link::after { content: attr(data-tip); position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%); background: #333; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 0.8em; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s; font-style: normal; font-weight: normal; }
+.copy-link:hover::after { opacity: 1; }
+
 @media (max-width: 768px) {
   .wrapper { flex-direction: column; }
   .sidebar { width: 100%; min-width: 100%; position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px; }
@@ -127,6 +132,8 @@ footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted
 <p>I am a Master's student at <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University</a>, supervised by Prof. <a href="https://yangxue.site/">Xue Yang</a> and Prof. <a href="https://thinklab.sjtu.edu.cn/">Junchi Yan</a>. I also visited <a href="https://www.ntu.edu.sg/">Nanyang Technological University</a> S-Lab, supervised by Prof. <a href="https://liuziwei7.github.io/">Ziwei Liu</a>. Before that, I received my Bachelor's degree from SJTU in 2023. Currently, I am interning at <em>Microsoft Research Asia</em>, mentored by <a href="https://scholar.google.com/citations?user=u6QK7AkAAAAJ">Yifan Yang</a>, <a href="https://scholar.google.com/citations?hl=zh-CN&user=01iBf38AAAAJ">Chong Luo</a>, and <a href="https://scholar.google.com/citations?hl=zh-CN&user=cDcWXuIAAAAJ">Lijuan Wang</a>.</p>
 
 <p>My research focuses on <strong>Unified Understanding and Generation</strong>, <strong>Image/Video Tokenization and Generation</strong>, <strong>Reinforcement Learning</strong>, and <strong>Multi-modal Perception</strong>.</p>
+
+<p style="color:gray;font-weight:bold;font-style:italic;">I am looking for PhD opportunities in the coming year and am open to academic collaborations. Please feel free to contact me if you're interested, or just to make a friend (<span class="copy-link" data-tip="daodao123@sjtu.edu.cn" style="color:gray;" onclick="navigator.clipboard.writeText('daodao123@sjtu.edu.cn').then(()=>{{const t=this;t.dataset.orig=t.textContent;t.textContent='Copied!';setTimeout(()=>t.textContent=t.dataset.orig,1500)}})">Email</span> | <span class="copy-link" data-tip="liyan_0283" style="color:gray;" onclick="navigator.clipboard.writeText('liyan_0283').then(()=>{{const t=this;t.dataset.orig=t.textContent;t.textContent='Copied!';setTimeout(()=>t.textContent=t.dataset.orig,1500)}})">WeChat</span>)!</p>
 
 <h2>News</h2>
 <div class="news-item"><span class="date">Jun 2026</span><span class="news-text">I graduated from SJTU! Named <strong>Outstanding Graduate of Shanghai</strong></span></div>
@@ -169,19 +176,6 @@ footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted
 <h1>Selected Works</h1>
 <div class="pub-card">
   <div class="pub-figure">
-  <img src="images/papers/evotok.png" alt="EvoTok: A Unified Image Tokenizer via Residual Latent Evolution for Visual Understanding and Generation teaser">
-  <div class="links"><a href="https://arxiv.org/abs/2603.12108">📄 Paper</a>
-<a href="https://github.com/VisionXLab/EvoTok" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="VisionXLab/EvoTok"></span></a></div>
-</div>
-  <div class="pub-info">
-    <h3>EvoTok: A Unified Image Tokenizer via Residual Latent Evolution for Visual Understanding and Generation</h3>
-    <p class="venue">Preprint</p>
-    <p class="authors"><strong>Yan Li</strong><sup>†</sup>, Ning Liao<sup>†</sup>, Xiangyu Zhao, Shaofeng Zhang, Xiaoxing Wang, Yifan Yang, Junchi Yan, Xue Yang</p>
-    <p class="abstract">A unified image tokenizer that represents images as a residual latent evolution trajectory within a shared latent space, effective for both semantic alignment and pixel reconstruction.</p>
-  </div>
-</div>
-<div class="pub-card">
-  <div class="pub-figure">
   <img src="images/papers/bizgeneval.png" alt="BizGenEval: A Systematic Benchmark for Commercial Visual Content Generation teaser">
   <div class="links"><a href="https://arxiv.org/abs/2603.25732">📄 Paper</a>
 <a href="https://github.com/microsoft/BizGenEval" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="microsoft/BizGenEval"></span></a>
@@ -192,6 +186,33 @@ footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted
     <p class="venue">Preprint</p>
     <p class="authors"><strong>Yan Li</strong><sup>†</sup>, Zezi Zeng<sup>†</sup>, Ziwei Zhou<sup>†</sup>, Xin Gao<sup>†</sup>, Muzhao Tian<sup>†</sup>, Yifan Yang, Mingxi Cheng, Qi Dai, Yuqing Yang, Lili Qiu, Zhendong Wang, Zhengyuan Yang, Xue Yang, Lijuan Wang, Ji Li</p>
     <p class="abstract">The first comprehensive benchmark for commercial visual content generation, covering five domains, four capability dimensions, 20 evaluation tasks, and 8,000 human-verified checklist questions.</p>
+  </div>
+</div>
+<div class="pub-card">
+  <div class="pub-figure">
+  <img src="images/papers/skillopt.png" alt="SkillOpt: Executive Strategy for Self-Evolving Agent Skills teaser">
+  <div class="links"><a href="https://arxiv.org/abs/2605.23904">📄 Paper</a>
+<a href="https://github.com/microsoft/SkillOpt" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="microsoft/SkillOpt"></span></a>
+<a href="https://aka.ms/skillopt">🌐 Project</a></div>
+</div>
+  <div class="pub-info">
+    <h3>SkillOpt: Executive Strategy for Self-Evolving Agent Skills</h3>
+    <p class="venue">Preprint</p>
+    <p class="authors">Yifan Yang<sup>†</sup>, Ziyang Gong<sup>†</sup>, Weiquan Huang<sup>†</sup>, Qihao Yang<sup>†</sup>, Ziwei Zhou<sup>†</sup>, Zisu Huang<sup>†</sup>, <strong>Yan Li</strong>, Xuemei Gao, Qi Dai, Bei Liu, Kai Qiu, Yuqing Yang, Dongdong Chen, Xue Yang, Chong Luo</p>
+    <p class="abstract">The first systematic controllable text-space optimizer for agent skills: turns scored rollouts into bounded edits on a skill document, accepted only when improving held-out validation. Best or tied on all 52 evaluated cells across six benchmarks, seven models, and three harnesses.</p>
+  </div>
+</div>
+<div class="pub-card">
+  <div class="pub-figure">
+  <img src="images/papers/evotok.png" alt="EvoTok: A Unified Image Tokenizer via Residual Latent Evolution for Visual Understanding and Generation teaser">
+  <div class="links"><a href="https://arxiv.org/abs/2603.12108">📄 Paper</a>
+<a href="https://github.com/VisionXLab/EvoTok" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="VisionXLab/EvoTok"></span></a></div>
+</div>
+  <div class="pub-info">
+    <h3>EvoTok: A Unified Image Tokenizer via Residual Latent Evolution for Visual Understanding and Generation</h3>
+    <p class="venue">Preprint</p>
+    <p class="authors"><strong>Yan Li</strong><sup>†</sup>, Ning Liao<sup>†</sup>, Xiangyu Zhao, Shaofeng Zhang, Xiaoxing Wang, Yifan Yang, Junchi Yan, Xue Yang</p>
+    <p class="abstract">A unified image tokenizer that represents images as a residual latent evolution trajectory within a shared latent space, effective for both semantic alignment and pixel reconstruction.</p>
   </div>
 </div>
 <div class="pub-card">
