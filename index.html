@@ -56,6 +56,8 @@ nav li a:hover { background: rgba(255,255,255,0.15); text-decoration: none; }
 .pub-card .venue { font-size: 0.88em; color: var(--muted); margin-bottom: 6px; font-style: italic; }
 .pub-card .authors { font-size: 0.9em; margin-bottom: 8px; }
 .pub-card .authors strong { font-weight: 700; }
+.pub-card .authors .contributor { color: #000; font-style: normal; }
+.pub-card .github-link svg { width: 16px; height: 16px; fill: currentColor; }
 .pub-card .abstract { font-size: 0.88em; color: #555; margin-bottom: 10px; }
 .pub-card .links { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .pub-card .links a { display: inline-flex; align-items: center; gap: 4px; font-size: 0.88em; padding: 4px 10px; border: 1px solid var(--border); border-radius: 4px; background: #fff; color: var(--text); }
@@ -134,6 +136,8 @@ footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted
 <p>My research focuses on <strong>Unified Understanding and Generation</strong>, <strong>Image/Video Tokenization and Generation</strong>, <strong>Reinforcement Learning</strong>, and <strong>Multi-modal Perception</strong>.</p>
 
 <h2>News</h2>
+<div class="news-item"><span class="date">Sep 2026</span><span class="news-text">Our <em>SkillOpt</em> paper got accepted at <strong>NeurIPS 2026 (Spotlight)</strong>! 🎉</span></div>
+<div class="news-item"><span class="date">Sep 2026</span><span class="news-text">We released <a href="https://github.com/OpenSenseNova/SenseNova-U1">SenseNova-U1.5</a>!</span></div>
 <div class="news-item"><span class="date">Jun 2026</span><span class="news-text">Our <em>EvoTok</em> paper got accepted at <strong>ECCV 2026</strong>! 🎉</span></div>
 <div class="news-item"><span class="date">Jun 2026</span><span class="news-text">I graduated from SJTU! Named <strong>Outstanding Graduate of Shanghai</strong></span></div>
 <div class="news-item"><span class="date">Jun 2026</span><span class="news-text">We released <a href="https://github.com/microsoft/SkillOpt">SkillOpt</a> <span class="gh-star-badge"><svg viewBox="0 0 16 16" style="width:14px;height:14px;fill:#333;vertical-align:middle;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="microsoft/SkillOpt"></span></span> 🔥</span></div>
@@ -146,7 +150,7 @@ footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted
 <div class="news-item"><span class="date">Feb 2025</span><span class="news-text">I started interning at <strong>NVIDIA</strong>, working on 3D neural reconstruction.</span></div>
 <div class="news-item"><span class="date">Oct 2024</span><span class="news-text">I received the <strong>National Scholarship</strong>.</span></div>
 <div class="news-item"><span class="date">Jul 2024</span><span class="news-text">Our <em>CastDet</em> paper got accepted at <strong>ECCV 2024</strong> 🎉</span></div>
-<div class="news-item"><span class="date">Mar 2024</span><span class="news-text">I joined <strong>BOSCH</strong> as a CV intern.</span></div>
+<div class="news-item"><span class="date">Mar 2024</span><span class="news-text">I started my internship at <strong>Bosch</strong>, working on multimodal perception.</span></div>
 
 <h2>Education</h2>
 <div class="edu-item">
@@ -175,9 +179,22 @@ footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted
 <h1>Selected Works</h1>
 <div class="pub-card">
   <div class="pub-figure">
+  <img src="images/papers/sensenova-u1-5.png" alt="SenseNova-U1.5: Towards Native Unified Visual Intelligence teaser">
+  <div class="links"><a href="https://arxiv.org/abs/2609.11929">📄 Paper</a>
+<a href="https://github.com/OpenSenseNova/SenseNova-U1" class="github-link"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a></div>
+</div>
+  <div class="pub-info">
+    <h3>SenseNova-U1.5: Towards Native Unified Visual Intelligence</h3>
+    <p class="venue">Technical Report</p>
+    <p class="authors"><strong class="contributor">Contributor</strong></p>
+    <p class="abstract">An 8B native unified multimodal model for visual understanding, reasoning, and generation, with native resolutions up to 4K and multi-expert on-policy distillation for improved image quality, text rendering, and editing.</p>
+  </div>
+</div>
+<div class="pub-card">
+  <div class="pub-figure">
   <img src="images/papers/bizgeneval.png" alt="BizGenEval: A Systematic Benchmark for Commercial Visual Content Generation teaser">
   <div class="links"><a href="https://arxiv.org/abs/2603.25732">📄 Paper</a>
-<a href="https://github.com/microsoft/BizGenEval" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="microsoft/BizGenEval"></span></a>
+<a href="https://github.com/microsoft/BizGenEval" class="github-link"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a>
 <a href="https://aka.ms/BizGenEval">🌐 Project</a></div>
 </div>
   <div class="pub-info">
@@ -191,12 +208,12 @@ footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted
   <div class="pub-figure">
   <img src="images/papers/skillopt.png" alt="SkillOpt: Executive Strategy for Self-Evolving Agent Skills teaser">
   <div class="links"><a href="https://arxiv.org/abs/2605.23904">📄 Paper</a>
-<a href="https://github.com/microsoft/SkillOpt" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="microsoft/SkillOpt"></span></a>
+<a href="https://github.com/microsoft/SkillOpt" class="github-link"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a>
 <a href="https://aka.ms/skillopt">🌐 Project</a></div>
 </div>
   <div class="pub-info">
     <h3>SkillOpt: Executive Strategy for Self-Evolving Agent Skills</h3>
-    <p class="venue">Preprint</p>
+    <p class="venue">NeurIPS 2026 (Spotlight)</p>
     <p class="authors">Yifan Yang<sup>†</sup>, Ziyang Gong<sup>†</sup>, Weiquan Huang<sup>†</sup>, Qihao Yang<sup>†</sup>, Ziwei Zhou<sup>†</sup>, Zisu Huang<sup>†</sup>, <strong>Yan Li</strong>, Xuemei Gao, Qi Dai, Bei Liu, Kai Qiu, Yuqing Yang, Dongdong Chen, Xue Yang, Chong Luo</p>
     <p class="abstract">The first systematic controllable text-space optimizer for agent skills: turns scored rollouts into bounded edits on a skill document, accepted only when improving held-out validation. Best or tied on all 52 evaluated cells across six benchmarks, seven models, and three harnesses.</p>
   </div>
@@ -205,13 +222,13 @@ footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted
   <div class="pub-figure">
   <img src="images/papers/sensenova-u1.png" alt="SenseNova-U1: Unifying Multimodal Understanding and Generation with NEO-unify Architecture teaser">
   <div class="links"><a href="https://arxiv.org/abs/2605.12500v1">📄 Paper</a>
-<a href="https://github.com/OpenSenseNova/SenseNova-U1" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="OpenSenseNova/SenseNova-U1"></span></a>
+<a href="https://github.com/OpenSenseNova/SenseNova-U1" class="github-link"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a>
 <a href="https://huggingface.co/collections/sensenova/sensenova-u1">🌐 Project</a></div>
 </div>
   <div class="pub-info">
     <h3>SenseNova-U1: Unifying Multimodal Understanding and Generation with NEO-unify Architecture</h3>
     <p class="venue">Technical Report</p>
-    <p class="authors">Haiwen Diao, Penghao Wu, Hanming Deng, Jiahao Wang, Shihao Bai, Silei Wu, Weichen Fan, Wenjie Ye, ..., <strong>Yan Li</strong>, et al. <span style="color:#5B9BD5"><em>"Core Contributor"</em></span></p>
+    <p class="authors"><strong class="contributor">Core Contributor</strong></p>
     <p class="abstract">A native unified multimodal paradigm coupling autoregressive language modeling with pixel-space flow matching.</p>
   </div>
 </div>
@@ -219,7 +236,7 @@ footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted
   <div class="pub-figure">
   <img src="images/papers/mm-webagent.png" alt="MM-WebAgent: A Hierarchical Multimodal Web Agent for Webpage Generation teaser">
   <div class="links"><a href="https://arxiv.org/abs/2604.15309">📄 Paper</a>
-<a href="https://github.com/microsoft/MM-WebAgent" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="microsoft/MM-WebAgent"></span></a>
+<a href="https://github.com/microsoft/MM-WebAgent" class="github-link"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a>
 <a href="https://aka.ms/mm-webagent">🌐 Project</a></div>
 </div>
   <div class="pub-info">
@@ -233,7 +250,7 @@ footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted
   <div class="pub-figure">
   <img src="images/papers/evotok.png" alt="EvoTok: A Unified Image Tokenizer via Residual Latent Evolution for Visual Understanding and Generation teaser">
   <div class="links"><a href="https://arxiv.org/abs/2603.12108">📄 Paper</a>
-<a href="https://github.com/VisionXLab/EvoTok" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="VisionXLab/EvoTok"></span></a></div>
+<a href="https://github.com/VisionXLab/EvoTok" class="github-link"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a></div>
 </div>
   <div class="pub-info">
     <h3>EvoTok: A Unified Image Tokenizer via Residual Latent Evolution for Visual Understanding and Generation</h3>
@@ -246,7 +263,7 @@ footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted
   <div class="pub-figure">
   <img src="images/papers/adaptok.png" alt="AdapTok: Learning Adaptive and Temporally Causal Video Tokenization in a 1D Latent Space teaser">
   <div class="links"><a href="https://arxiv.org/abs/2505.17011">📄 Paper</a>
-<a href="https://github.com/VisionXLab/AdapTok" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="VisionXLab/AdapTok"></span></a></div>
+<a href="https://github.com/VisionXLab/AdapTok" class="github-link"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a></div>
 </div>
   <div class="pub-info">
     <h3>AdapTok: Learning Adaptive and Temporally Causal Video Tokenization in a 1D Latent Space</h3>
@@ -259,7 +276,7 @@ footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted
   <div class="pub-figure">
   <img src="images/papers/castdet-ijcv.png" alt="Exploiting Unlabeled Data with Multiple Expert Teachers for Open Vocabulary Aerial Object Detection and Its Orientation Adaptation teaser">
   <div class="links"><a href="https://arxiv.org/abs/2411.02057">📄 Paper</a>
-<a href="https://github.com/lizzy8587/CastDet" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="lizzy8587/CastDet"></span></a></div>
+<a href="https://github.com/lizzy8587/CastDet" class="github-link"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a></div>
 </div>
   <div class="pub-info">
     <h3>Exploiting Unlabeled Data with Multiple Expert Teachers for Open Vocabulary Aerial Object Detection and Its Orientation Adaptation</h3>
@@ -272,7 +289,7 @@ footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted
   <div class="pub-figure">
   <img src="images/papers/castdet-eccv.png" alt="Toward Open Vocabulary Aerial Object Detection with CLIP-Activated Student-Teacher Learning teaser">
   <div class="links"><a href="https://arxiv.org/abs/2311.11646">📄 Paper</a>
-<a href="https://github.com/lizzy8587/CastDet" class="gh-star-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars" data-repo="lizzy8587/CastDet"></span></a></div>
+<a href="https://github.com/lizzy8587/CastDet" class="github-link"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a></div>
 </div>
   <div class="pub-info">
     <h3>Toward Open Vocabulary Aerial Object Detection with CLIP-Activated Student-Teacher Learning</h3>
@@ -285,17 +302,17 @@ footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--muted
 <div class="section" id="experience">
 <h1>Experience</h1>
 <div class="exp-item">
-  <img class="exp-logo" src="images/logos/microsoft_logo.png" alt="">
-  <div class="exp-body">
-    <div class="exp-header"><h3>Research Intern, Microsoft Research Asia <em style="color:#5B9BD5;font-weight:normal">"Stars of Tomorrow Award"</em></h3><span class="dates">Aug 2025 – Present</span></div>
-    <p class="exp-desc">RL for autoregressive complex layout image generation; multimodal web generation agent (MM-WebAgent); commercial visual benchmark (BizGenEval); skill/harness evolution (SkillOpt); agentic slides generation</p>
-  </div>
-</div>
-<div class="exp-item">
   <img class="exp-logo" src="images/logos/ntu_logo.png" alt="">
   <div class="exp-body">
     <div class="exp-header"><h3>Visiting Student, Nanyang Technological University, S-Lab</h3><span class="dates">Jan 2026 – Present</span></div>
     <p class="exp-desc">Core contributor to SenseNova-U1 native unified multimodal understanding and generation model</p>
+  </div>
+</div>
+<div class="exp-item">
+  <img class="exp-logo" src="images/logos/microsoft_logo.png" alt="">
+  <div class="exp-body">
+    <div class="exp-header"><h3>Research Intern, Microsoft Research Asia <em style="color:#5B9BD5;font-weight:normal">"Stars of Tomorrow Award"</em></h3><span class="dates">Aug 2025 – Sep 2026</span></div>
+    <p class="exp-desc">RL for autoregressive complex layout image generation; multimodal web generation agent (MM-WebAgent); commercial visual benchmark (BizGenEval); skill/harness evolution (SkillOpt); agentic slides generation</p>
   </div>
 </div>
 <div class="exp-item">
